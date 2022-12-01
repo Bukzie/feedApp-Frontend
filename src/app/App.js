@@ -7,6 +7,7 @@ import Login from "../user/login/Login";
 import Signup from "../user/signup/Signup";
 import Profile from "../user/profile/Profile";
 import Logo from "../assets/images/logo.png";
+import Home from "../user/home/Home";
 
 const { Content } = Layout;
 
@@ -48,6 +49,15 @@ const App = () => {
               element={
                 <Header>
                   <Profile currentUser={currentUser} />
+                </Header>
+              }
+            />
+            <Route
+              exact
+              path="/"
+              element={
+                <Header>
+                  <Home currentUser={currentUser} />
                 </Header>
               }
             />

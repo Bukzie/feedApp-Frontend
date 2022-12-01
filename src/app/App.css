@@ -1,14 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-    background-color: #fafafa;
-  }
+  background-image: url('../assets/images/background.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.layout {
+  background-color: transparent;
+}
   
-  .ant-layout-header {
-    height: 79px;
-    line-height: 77px;
-    background-color: #fff;
-    border-bottom: 1px solid #e8e8e8;
-    padding: 0;
-  }
-  .app-content {
-    background-color: #fafafa;
-  }
+.ant-layout-header {
+  height: 79px;
+  line-height: 77px;
+  background-color: #fff;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 0;
+}
+.app-content {
+  /* background-color: #fafafa; */
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2.5rem;
+
+}
+
+.logo img {
+  height: 5rem;
+}

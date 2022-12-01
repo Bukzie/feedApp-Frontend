@@ -8,6 +8,7 @@ import Signup from "../user/signup/Signup";
 import Profile from "../user/profile/Profile";
 import Logo from "../assets/images/logo.png";
 import Home from "../user/home/Home";
+import MyFeeds from "../user/myFeeds/MyFeeds";
 
 const { Content } = Layout;
 
@@ -58,6 +59,15 @@ const App = () => {
               element={
                 <Header>
                   <Home currentUser={currentUser} />
+                </Header>
+              }
+            />
+            <Route
+              exact
+              path="/myFeeds"
+              element={
+                <Header>
+                  <MyFeeds currentUser={currentUser} />
                 </Header>
               }
             />

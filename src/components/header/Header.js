@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import "./header.css";
 import { Link } from "react-router-dom";
+import { AppContext } from "../../context/applicationContext";
 
 const Header = (props) => {
   const logout = () => {
-    //logout funtionality goes here
+    AppContext.logout();
   };
   return (
     <>
@@ -47,12 +48,12 @@ const Header = (props) => {
                     </Link>
                   </li>
                   <li>
-                    <div
+                    <Link
                       className="inline-block no-underline hover:text-black font-normal text-lg py-2 px-4 lg:-ml-2"
                       onClick={() => logout()}
                     >
                       Logout
-                    </div>
+                    </Link>
                   </li>
                 </ul>
               </nav>

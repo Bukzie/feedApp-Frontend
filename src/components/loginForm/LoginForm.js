@@ -12,10 +12,6 @@ const FormItem = Form.Item;
 const LoginForm = () => {
   const appContext = useContext(AppContext);
 
-const logout = () => {
-  appContext.logout();
-}
-
   const onFinish = async (values) => {
     const apiResponse = await loginApi(values.username, values.password);
 

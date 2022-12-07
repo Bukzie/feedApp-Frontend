@@ -257,3 +257,45 @@ export const updateAddressApi = async (
     return response;
   }
 };
+
+export const updateSecurityApi = async (
+  token,
+  id,
+  securityQuestion1,
+  securityAnswer1,
+  securityQuestion2,
+  securityAnswer2,
+  securityQuestion3,
+  securityAnswer3,
+  phoneNumber,
+  userPassword
+) => {
+  let response = undefined;
+  try {
+    const url = `${API_BASE_URL}/user/personal/security`;
+    const apiResponse = await axios.put(
+      url,
+      {
+        id,
+        securityQuestion1,
+        securityAnswer1,
+        securityQuestion2,
+        securityAnswer2,
+        securityQuestion3,
+        securityAnswer3,
+        phoneNumber,
+        userPassword,
+      },
+      {
+        headers: { Authorization: frameToken(token) },
+      }
+    );
+    if (apiResponse.status === 200) {
+      response = apiResponse.data;
+    }
+  } catch (err) {
+    console.log(err);
+  } finally {
+    return response;
+  }
+};

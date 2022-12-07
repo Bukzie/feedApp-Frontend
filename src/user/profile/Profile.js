@@ -12,34 +12,31 @@ const Profile = ({ currentUser }) => {
     <div className="bg-white">
       <nav className="flex flex-col sm:flex-row">
         <button
-          className={`text-gray-600 py-4 px-6 block hover:text-indigo-500 focus:outline-none ${
-            tab == 1 && tabStyle
-          }`}
+          className={`text-gray-600 py-4 px-6 block hover:text-indigo-500 focus:outline-none ${tab == 1 && tabStyle
+            }`}
           onClick={() => setTab(1)}
         >
           Basic Profile
         </button>
         <button
-          className={`text-gray-600 py-4 px-6 block hover:text-indigo-500 focus:outline-none ${
-            tab == 2 && tabStyle
-          }`}
+          className={`text-gray-600 py-4 px-6 block hover:text-indigo-500 focus:outline-none ${tab == 2 && tabStyle
+            }`}
           onClick={() => setTab(2)}
         >
           Address
         </button>
         <button
-          className={`text-gray-600 py-4 px-6 block hover:text-indigo-500 focus:outline-none ${
-            tab == 3 && tabStyle
-          }`}
+          className={`text-gray-600 py-4 px-6 block hover:text-indigo-500 focus:outline-none ${tab == 3 && tabStyle
+            }`}
           onClick={() => setTab(3)}
         >
           Security
         </button>
       </nav>
 
-      {tab === 1 && <BasicProfile />}
-      {tab === 2 && <AddressProfile />}
-      {tab === 3 && <SecurityProfile />}
+      {tab === 1 && <BasicProfile currentUser={currentUser} />}
+      {tab === 2 && <AddressProfile currentUser={currentUser} />}
+      {tab === 3 && <SecurityProfile currentUser={currentUser} />}
     </div>
   );
 };
